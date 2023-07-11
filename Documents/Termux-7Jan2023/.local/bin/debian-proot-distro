@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+pulseaudio --start
+
+command="proot-distro login debian"
+command+=" --bind /:/redmi"
+command+=" --bind /storage:/storage"
+command+=" $@"
+#command+=" -- vncserver -localhost no && bash"
+#command+=" -- && ls"
+
+exec $command

@@ -1,0 +1,29 @@
+#! /bin/bash
+
+# by abdulloh
+
+# if [[ $1 = id || $1 = jv || $1 = ar ]]
+# 	then cat /home/abdulloh/.local/bin/rofitranstarget/$1 > /home/abdulloh/.local/bin/rofi_trans
+# 	else cat /home/abdulloh/.local/bin/rofitranstarget/en > /home/abdulloh/.local/bin/rofi_trans
+# fi
+
+if [[ $1 != speak && $1 != play ]]
+	then sed -i "s/transTarget=.*/transTarget=\"$1\"/" ~/.local/bin/rofi_trans 
+fi
+
+
+for var in "$@"; do
+	case "$var" in
+		speak)
+			sed -i "s/transArgs=.*/transArgs=\"-b -speak\"/" ~/.local/bin/rofi_trans 
+		;;
+		play)
+			sed -i "s/transArgs=.*/transArgs=\"-b -play\"/" ~/.local/bin/rofi_trans 
+		;;
+		*)
+			sed -i "s/transArgs=.*/transArgs=\"-b\"/" ~/.local/bin/rofi_trans 
+		;;
+	esac
+done
+
+~/.local/bin/rofi_trans

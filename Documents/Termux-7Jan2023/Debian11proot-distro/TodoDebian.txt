@@ -1,0 +1,40 @@
+# theme = adwaita, sierra
+# icon = adwaita, tela
+# cursor = breeze snow, adwaita
+# chromium --no-sandbox
+# /usr/share/code/code --unity-launch %F --user-data-dir="~/.vscode-root" --no-sandbox
+
+### di terminal
+### tidak penting???
+#apt install desktop-base xorg
+
+apt update
+apt install dialog apt-utils bash-completion command-not-found wget gpg man-db
+apt install nano iputils-ping iproute neofetch hollywood psmisc #untuk menggunakan killall
+apt update
+update-command-not-found
+apt install xfce4 --no-install-recommends
+apt install tigervnc-standalone-server dbus-x11
+dpkg-reconfigure tzdata
+apt install xfce4-screenshooter xfce4-whiskermenu-plugin xfce4-clipman-plugin gpicview xfce4-terminal xfce4-notifid mousepad xarchiver 2048
+apt install gnome-themes-extra #untuk mendapatkan tema adwaita
+apt install baobab --no-install-recommends #disk usage analyzer
+apt install chromium
+
+apt install code
+
+### install sublime text
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
+echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
+apt update
+apt install sublime-text
+
+### install yewtube
+apt install python3-pip --no-install-recommends
+pip3 install yewtube
+apt install mplayer
+
+
+ln -s /sdcard/Lainnya/Linux\ on\ Android/Termux-7Jan2023/Debian11proot-distro/.bashrc .bashrc
+ln -s /sdcard/Lainnya/Linux\ on\ Android/Termux-7Jan2023/Debian11proot-distro/bin ~/.local/bin
+
